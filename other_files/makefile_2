@@ -1,0 +1,38 @@
+####################################################################
+# Makefile for building the students application
+#
+
+
+#
+# Definitions
+#
+CC = g++
+CFLAGS = -g -Wall
+CCLINK = $(CC)
+OBJS = Student.o Person.o Course.o CS_Course.o EE_Course.o StArray.o main.o
+RM = rm -f
+TARGET = students
+
+#
+# Target Section
+#
+$(TARGET): $(OBJS)
+	$(CCLINK) -o $(TARGET) $(OBJS)
+
+
+#
+# File Section
+#
+Course.o: Course.C Course.H
+EE_Course.o: EE_Course.C Course.H
+CS_Course.o: CS_Course.C Course.H
+Person.o: Person.C Course.H Course.C
+Student.o: Student.C Student.H 
+StArray.o: StArray.C StArray.H CS_Course.H EE_Course.H
+main.o: main.C Proj.H StArray.H
+
+#
+# Cleaning
+#
+clean:
+	$(RM) $(TARGET) $(OBJS) *.o *.bak *~"#"* core
