@@ -150,9 +150,9 @@ public:
 	void readGLO(std::ifstream& inputfileGLO); // for separate GLO only navigation files
 	void readGAL(std::ifstream& inputfileGAL); // for separate GAL only navigation files
 	void readMixed(std::ifstream& inputfileMixed); // for mixed navigation files
-	int Rinex3Nav::EpochMatcher(double obsTime, std::vector<Rinex3Nav::DataGPS> NAV);
-	int Rinex3Nav::EpochMatcher(double obsTime, std::vector<Rinex3Nav::DataGAL> NAV);
-	int Rinex3Nav::EpochMatcher(double obsTime, std::vector<Rinex3Nav::DataGLO> NAV);
+	int EpochMatcher(double obsTime, std::vector<Rinex3Nav::DataGPS> NAV);
+	int EpochMatcher(double obsTime, std::vector<Rinex3Nav::DataGAL> NAV);
+	int EpochMatcher(double obsTime, std::vector<Rinex3Nav::DataGLO> NAV);
 
 };
 

@@ -10,5 +10,7 @@
 #include <iterator>
 #include <map>
 #include <vector>
+#include <math.h>
+#include <algorithm>
 
 #endif //PCH_H
